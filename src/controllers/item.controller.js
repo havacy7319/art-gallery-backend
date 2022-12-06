@@ -8,6 +8,12 @@ async function publicar (req, res){
     res.json(nuevo)
 }
 
+async function obtenerTodos(req,res){
+    const items = await Item.find()
+    res.json(items)
+}
 module.exports = {
     publicar,
+    obtenerTodos,
+    
 }
