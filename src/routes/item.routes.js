@@ -1,10 +1,11 @@
 const router = require('express').Router()
-const {publicar, obtenerTodos} = require('../controllers/item.controller')
+const {publish, getAll} = require('../controllers/item.controller')
 
 
-router.post('/items/publicar', publicar )
+router.post('/publish', publish )
 
-router.get('/items', obtenerTodos)
+router.get('/', getAll)
+router.get('/:id', getAll)
 
 
 module.exports = router

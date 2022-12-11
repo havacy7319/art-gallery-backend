@@ -2,12 +2,18 @@ const mongoose = require('mongoose')
 const {Schema} = mongoose
 
 const ItemSchema = new Schema({
-    titulo: {type: String, required: true},
-    descripcion: {type: String, required: true},
-    precio: {type:Number, required: true},
-    autor: {
+    title: {
+        type: String, required: true
+    },
+    description: {
+        type: String, required: true
+    },
+    price: {
+        type:Number, required: true
+    },
+    author: {
         type: Schema.Types.ObjectId,
-        ref: 'Usuario',required:true,
+        ref: 'User',required:true,
         
     },
     img:{data: Buffer, contenType: String}
