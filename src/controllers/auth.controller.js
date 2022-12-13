@@ -36,7 +36,7 @@ async function login (req, res) {
 
       const token = jwt.sign({ email: user.email }, process.env.SECRET, { expiresIn: '1h' })
 
-      res.status(200).json({ email: user.email, name: user.name, description:user.description, descriptionShort:user.descriptionShort, token })
+      res.status(200).json({ _id:user._id, email: user.email, name: user.name, description:user.description, descriptionShort:user.descriptionShort, token })
     })
   } catch (error) {
     res.status(500).send('Error logging user')

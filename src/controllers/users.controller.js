@@ -51,7 +51,7 @@ function deleteUserById (req, res) {
 function updateUser (req, res) {
   UserModel
     .findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
+      new: false,
       runValidators: true
     })
     .then(response => res.json(response))
