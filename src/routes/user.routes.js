@@ -5,9 +5,10 @@ const { authUser } = require('../utils')
 
 
 
-router.get('/', authUser, getAllUsers),
+router.get('/', getAllUsers),
 router.get('/:id', getUser)
 router.put('/:id', updateUser)
+
 
 
 

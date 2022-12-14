@@ -8,4 +8,5 @@ router.get('/', getAll)
 router.get('/:id', getAll)
 
 
+
 module.exports = router
