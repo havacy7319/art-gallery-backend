@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017/artgallery')
+mongoose.connect(process.env.MONGO_URL, {dbName:process.env.MONGO_DB})
 .then(db=>{
     console.log('[✔️] conexion con la base de datos')
 })
