@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const {Schema} = mongoose
+const UserModel = require('./users.model')
 
 const ItemSchema = new Schema({
     title: {
@@ -13,7 +14,7 @@ const ItemSchema = new Schema({
     },
     author: {
         type: Schema.Types.ObjectId,
-        ref: 'User',required:true,
+        ref: UserModel,required:true,
         
     },
     img:{data: Buffer, contenType: String}

@@ -1,4 +1,5 @@
 const Item = require('../models/item.model')
+const userModel = require('../models/users.model')
 
 async function publish (req, res){
     const {title, description, price, author, img} = req.body
@@ -9,7 +10,8 @@ async function publish (req, res){
 }
 
 async function getAll(req,res){
-    const items = await Item.find()
+    const items = await Item.find().populate('author')
+
     res.json(items)
 }
 module.exports = {
