@@ -17,8 +17,10 @@ const ItemSchema = new Schema({
         ref: UserModel,required:true,
         
     },
-    img:{data: Buffer, contenType: String}
-
+    //img:{data: Buffer, contenType: String}//
+    img: {
+        type: String, required: true,
+    },
 })
 
 module.exports = mongoose.model('Item', ItemSchema )
